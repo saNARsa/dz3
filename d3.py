@@ -3,7 +3,6 @@ def count_calls():
     global calls
     calls += 1
 
-
 def string_info(x):
 
     y = (len(x), x.upper(),x.lower())
@@ -12,17 +11,21 @@ def string_info(x):
     return y
 
 
-
 def is_contains(x, y):
     count_calls()
     for i in y:
-        if i == x:
+        if i.lower() == x.lower():
             return True
-        elif i != x :
+    for i in y:
+        if i.lower() != x.lower():
             return False
 
+print(string_info('Capybara'))
 
-print(string_info('gg'))
-print(is_contains('all', ['all','ill']))
-print(is_contains('alll', ['all','ill']))
+print(string_info('Armageddon'))
+
+print(is_contains('Urban', ['ban', 'BaNaN', 'urBAN']))
+
+print(is_contains('cycle', ['recycling', 'cyclic']))
+
 print(calls)
